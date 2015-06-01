@@ -5,10 +5,12 @@ fieldset {
 	padding-bottom: 20px;
 }
 
-#form-wrapper {
+#bakes-wrapper {
 	margin: 400px auto 200px auto;
 	width: 40%;
 	padding: 30px;
+	min-width: 420px; /*sets min size across pg no smaller than 420px*/
+	width: 40%; /*width percentage on page; allows responsivenes when changing size of page*/
 	/*margin-left: 30px;
 	width: 450px;
 	padding-top: 25px;
@@ -61,7 +63,7 @@ input {
 }
 
 .submit-button {
-	background-color: white;
+	background-color: skyblue;
 	color: red;
 	padding: 1px;
 	width: 50%;
@@ -70,6 +72,7 @@ input {
 	height: 40px;
 	border-style: groove;
 	font-weight: bold;
+	
 }
 
 .email {
@@ -89,7 +92,7 @@ input {
 	padding-right: 95px;
 	height: 25px;
 
-	background-color: blue;
+	background-color: red;
 	width: 225px;
 	margin-left: 4px;
 	
@@ -97,17 +100,16 @@ input {
 
 }
 
-}
+
 
 .last-name {
   padding-right: 40px;
   height: 35px;
   width: 250px;
-
   padding-left: 30px;
-
   font-size: 100%;
-}
+  }
+
 
 .first-name {
 	padding-right: 70px;
@@ -117,8 +119,9 @@ input {
 	padding-left: 30px;
 
 	font-size: 100%;
-	
+	color: black;	
 }
+
 
 div {
 	background-color: black;
@@ -132,7 +135,17 @@ div {
 }
 
 
+#bakes-wrapper textarea{
+	width: 70%;
+	height: 200px;
+	color: black;
+}
+
+#bakes-wrapper label{
+	width: 100px;
+}
 
 
+/*go crazy with boxes
 
 

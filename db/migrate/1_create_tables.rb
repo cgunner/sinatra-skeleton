@@ -11,7 +11,6 @@ class CreateTables < ActiveRecord::Migration
     create_table :bakes do |t|
       # Your code goes here
       t.string :title
-      t.string :picture_caption
       t.decimal :rating
       t.text :ingredients
       t.text :reviews
