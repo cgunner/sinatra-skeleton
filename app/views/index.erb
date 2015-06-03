@@ -1,11 +1,46 @@
-<h1>Post and Review Recipes!</h1>
-
-<section class="top-bar-section">
 
 
-<ul class="right">
-	<li class="active"><a href="/login">Log In</a></li>
-</ul>
+<section class="top-bar-section black-background">
 
+<h1 class="title">Post and Review Recipes!</h1>
+
+	<a class="button right" href="/login">Log In</a>
+
+	<a class="button left" href="/signup">Register</a>
+
+	<% if current_user %> 
+		<p>Hello <%=current_user.firstname%></p> 
+
+		<% @posts = current_user.bakes.all %>
+		<% @posts.each do |post| %>
+			<div class="post">
+				<h1><%=post.title%></h1>
+				<p><%=post.ingredients%></p>
+				<p><%=post.reviews%></p>
+				<img src="<%=post.picture_caption%>">
+			</div>
+		<%end%>
+
+		<div class="clear"></div>
+	<% else %>
+		 <% @posts = Bake.all %>
+		 <% @posts.each do |post| %>
+			<div class="post">
+				<h1><%=post.title%></h1>
+				<p><%=post.ingredients%></p>
+				<p><%=post.reviews%></p>
+				<img src="<%=post.picture_caption%>">
+			</div>
+		<%end%>
+		<div class="clear"></div>
+	<% end %>
+
+	<%# <p> all of the recipes in database </p> 
+	<% @posts = Bakes.all %>
+
+	<%# <p>current user recipes</p>%>
+
+
+	
 
 </section>

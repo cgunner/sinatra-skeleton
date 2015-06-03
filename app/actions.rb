@@ -1,5 +1,5 @@
 # Homepage (Root path)
-require "pry"
+
 helpers do
 	def current_user
   	@current_user = User.find_by(id: session[:user_id]) if session[:user_id]
@@ -41,7 +41,7 @@ post '/login' do
   if user.password == password
     session[:user_id] = user.id
     redirect '/profile'
-   else
+  else
    	redirect '/login'
 	end
 end
@@ -69,17 +69,20 @@ end
 
 post '/bakes/new' do #post/new category
    rating = params[:rating]
-   ingredients = params [:ingredients]
-   reviews = [:reviews] 
+   ingredients = params[:ingredients]
+   reviews = params[:reviews] 
+   title = params[:title]
+   picture_caption = params[:picture_caption]
 
    if current_user
-   	current_user.posts.create(rating: rating, ingredients: ingredients, reviews: reviews)
-   	redirect '/profile'
+   	new_bakes = current_user.bakes.create(rating: rating, ingredients: ingredients, reviews: reviews, title: title, picture_caption: picture_caption)
+
+   	redirect "/bakes/#{new_bakes.id}"
    else
-   	redirect '/signup'
+   	redirect '/login'
    end
-    
 end
+
 
 
 

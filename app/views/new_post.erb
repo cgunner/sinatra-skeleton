@@ -1,7 +1,7 @@
 <!-- this is bakes -->
-<div id="bakes-wrapper">
-		<h1><font color="CCFFFF">Post</font></h1>
-		<form method="GET" action="/bakes/new">
+<div id="bakes-wrapper" class="black-background">
+		<h1><font color="CCFFFF">Post Recipes</font></h1>
+		<form method="POST" action="/bakes/new">
 		
 			<fieldset>
 				<label class="white">Title:</label>
@@ -21,6 +21,12 @@
 			<fieldset>
 				<label class="white">Reviews:</label>
 				<textarea class="reviews" type="text" name="reviews"></textarea>
+			</fieldset>
+
+
+			<fieldset>
+				<label class="white">Image URL:</label>
+				<textarea class="imageurl" type="text" name="picture_caption"></textarea>
 			</fieldset>
 
 			<fieldset>
