@@ -36,9 +36,10 @@ end
 post '/login' do
   username = params[:username]
   password = params[:password]
-
+  
   user = User.find_by(username: username)
-  if user.password == password
+
+  if user && user.password == password
     session[:user_id] = user.id
     redirect '/profile'
   else
@@ -64,7 +65,7 @@ post '/signup' do
 end
 
 post '/profile' do
-    redirect '/'
+    redirect '/profile'
 end
 
 post '/bakes/new' do #post/new category
